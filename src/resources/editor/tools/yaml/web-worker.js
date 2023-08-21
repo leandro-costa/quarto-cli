@@ -7321,7 +7321,17 @@ try {
             tags: {
               engine: "knitr"
             },
-            schema: "boolean",
+            schema: {
+              anyOf: [
+                "boolean",
+                {
+                  enum: [
+                    "styler",
+                    "formatR"
+                  ]
+                }
+              ]
+            },
             default: false,
             description: "Whether to reformat R code."
           },
@@ -19229,8 +19239,9 @@ try {
             short: "The language of the feed.",
             long: 'The language of the feed. Omitted if not specified. See <a href="https://www.rssboard.org/rss-language-codes">https://www.rssboard.org/rss-language-codes</a>\nfor a list of valid language codes.'
           },
-          "A list of categories for which to create separate RSS feeds\ncontaining only posts with that category.",
-          "A list of categories for which to create separate RSS feeds\ncontaining only posts with that category.",
+          "A list of categories for which to create separate RSS feeds\ncontaining only posts with that category",
+          "A list of categories for which to create separate RSS feeds\ncontaining only posts with that category",
+          "The path to an XML stylesheet (XSL file) used to style the RSS\nfeed.",
           {
             short: "The date format to use when displaying dates (e.g.&nbsp;d-M-yyy).",
             long: 'The date format to use when displaying dates (e.g.&nbsp;d-M-yyy). Learn\nmore about supported date formatting values <a href="https://deno.land/std@0.125.0/datetime">here</a>.'
@@ -21845,12 +21856,12 @@ try {
           mermaid: "%%"
         },
         "handlers/mermaid/schema.yml": {
-          _internalId: 163214,
+          _internalId: 163222,
           type: "object",
           description: "be an object",
           properties: {
             "mermaid-format": {
-              _internalId: 163206,
+              _internalId: 163214,
               type: "enum",
               enum: [
                 "png",
@@ -21866,7 +21877,7 @@ try {
               exhaustiveCompletions: true
             },
             theme: {
-              _internalId: 163213,
+              _internalId: 163221,
               type: "anyOf",
               anyOf: [
                 {
